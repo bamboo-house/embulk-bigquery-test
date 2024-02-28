@@ -1,0 +1,17 @@
+in:
+  type: mysql
+  user: fuka_user
+  password: fuka_pass
+  host: mysql_latest
+  database: training
+  query: select * from departments;
+out:
+  type: bigquery
+  auth_method: json_key
+  json_keyfile: /home/service_account_iam_key.json
+  location: asia-northeast1
+  project: galickho
+  dataset: test_embulk
+  table: departments
+  mode: append
+  auto_create_table: true
